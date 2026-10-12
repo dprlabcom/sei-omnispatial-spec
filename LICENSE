@@ -1,0 +1,21 @@
+SOVEREIGN ACADEMIC & NON-COMMERCIAL LICENSE (SANCL) v1.0
+Copyright (c) 2026 DPRLAB. All rights reserved.
+
+1. PERMITTED USAGE:
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this specification and associated documentation files (the "Specification"), 
+to evaluate, inspect, and utilize the material solely for academic, research, 
+educational, and non-commercial testing purposes.
+
+2. COMMERCIAL RESTRICTIONS:
+Commercial deployment, redistribution, integration into commercial SaaS/software 
+platforms, or use of this Specification to build commercial execution engines 
+without explicit written authorization from DPRLAB is strictly prohibited.
+
+3. PROPRIETARY CORE DISCLOSURE:
+This Specification defines integration interfaces and spatial schemas only. 
+The underlying runtime execution binaries, multi-agent prompt-chaining logic, 
+and production architectural assets remain protected intellectual property 
+under the DPRLAB Black Book Protocol.
+
+THE SPECIFICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

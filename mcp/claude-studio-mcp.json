@@ -1,0 +1,26 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/mcp-config.v1.json",
+  "name": "sei-omnispatial-mcp-bridge",
+  "version": "1.0.0",
+  "description": "DPRLAB SEI OmniSpatial Runtime - MCP Server Configuration for Claude Studio & Cloud Runtimes",
+  "mcpServers": {
+    "sei-spatial-engine": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@dprlab/sei-mcp-server@latest"
+      ],
+      "env": {
+        "SEI_RUNTIME_ENDPOINT": "wss://runtime.dprlab.com/v1/omnispatial",
+        "SEI_SCHEMA_MODE": "blueprint-as-code",
+        "SEI_SECURITY_LEVEL": "SANCL-STANDARD"
+      },
+      "capabilities": [
+        "spatial.scene.inspect",
+        "spatial.node.create",
+        "spatial.foundation.verify",
+        "spatial.container.mount"
+      ]
+    }
+  }
+}

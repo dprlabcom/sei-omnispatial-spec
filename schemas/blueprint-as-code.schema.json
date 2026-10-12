@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dprlab.com/schemas/blueprint-as-code.schema.json",
+  "title": "SEI Blueprint-as-Code Spatial Topology Schema",
+  "description": "Public specification for defining spatial coordinates, structural node hierarchies, and container assemblies within the SEI OmniSpatial Runtime.",
+  "type": "object",
+  "required": ["version", "projectId", "spatialTopology"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "projectId": {
+      "type": "string",
+      "description": "Unique identifier for the SEI spatial project (e.g., villa-binnis-01, elevare-podium)"
+    },
+    "spatialTopology": {
+      "type": "object",
+      "required": ["coordinates", "nodes"],
+      "properties": {
+        "coordinates": {
+          "type": "object",
+          "required": ["system", "origin"],
+          "properties": {
+            "system": {
+              "type": "string",
+              "enum": ["EPSG:4326", "LOCAL_CARTESIAN"]
+            },
+            "origin": {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 3,
+              "maxItems": 3,
+              "description": "[X, Y, Z] spatial origin coordinates"
+            }
+          }
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["nodeId", "type", "position"],
+            "properties": {
+              "nodeId": { "type": "string" },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "MONOLITHIC_FOUNDATION",
+                  "CONTAINER_FRAME",
+                  "STRUCTURAL_WALL",
+                  "LIGHTING_RIG",
+                  "CAMERA_WAYPOINT"
+                ]
+              },
+              "position": {
+                "type": "array",
+                "items": { "type": "number" },
+                "minItems": 3,
+                "maxItems": 3
+              },
+              "rotation": {
+                "type": "array",
+                "items": { "type": "number" },
+                "minItems": 3,
+                "maxItems": 3
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
